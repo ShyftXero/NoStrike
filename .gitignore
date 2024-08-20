@@ -4,3 +4,4 @@ nostrike.build
 nostrike.dist
 venv
 .venv
+nuitka-crash-report.xml
