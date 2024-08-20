@@ -1,16 +1,19 @@
 [project]
+
 name = "nostrike"
 version = "0.1.0"
-description = "Add your description here"
+description = "NoStrike is a firewall config tool to prevent unwanted access to specific hosts (hosts you can NOt STRIKE)"
 readme = "README.md"
+requires-python = ">= 3.11"
 dependencies = [
     "typer",
     "mpire",
     "dnspython",
     "pyfiglet",
-    "nuitka",
-    "pytest",
 ]
 
 [tool.uv]
-dev-dependencies = []
+dev-dependencies = [
+    "pytest",
+    "nuitka",
+]
