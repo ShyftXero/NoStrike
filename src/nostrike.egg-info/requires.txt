@@ -2,3 +2,5 @@ typer
 mpire
 dnspython
 pyfiglet
+nuitka
+pytest

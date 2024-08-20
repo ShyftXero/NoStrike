@@ -8,6 +8,8 @@ dependencies = [
     "mpire",
     "dnspython",
     "pyfiglet",
+    "nuitka",
+    "pytest",
 ]
 
 [tool.uv]

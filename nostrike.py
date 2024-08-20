@@ -37,7 +37,11 @@ def show_logo():
     ]
 
     f = pyfiglet.figlet_format("NoStrike", font = random.choice(fonts))
+    print('\nshyft presents...')
     print(f)
+    print('Prevent network traffic to hosts in ~/nostrike.txt')
+    print('='*25)
+    print()
 
 
 def read_nostrike_file(file_path: str) -> List[str]:
@@ -70,7 +74,22 @@ def is_valid_ip(ip: str) -> bool:
 
 def is_valid_cidr(cidr: str) -> bool:
     try:
-        ipaddress.ip_network(cidr)
+        # Check if the string contains a '/'
+        if '/' not in cidr:
+            return False
+        
+        # Split the CIDR notation into network and prefix
+        network, prefix = cidr.split('/')
+        
+        # Validate the network part as an IP address
+        ipaddress.ip_address(network)
+        
+        # Validate the prefix as an integer between 0 and 32
+        prefix_int = int(prefix)
+        if prefix_int < 0 or prefix_int > 32:
+            return False
+        
+        # If all checks pass, it's a valid CIDR
         return True
     except ValueError:
         return False

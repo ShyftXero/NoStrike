@@ -7,6 +7,8 @@ Requires-Dist: typer
 Requires-Dist: mpire
 Requires-Dist: dnspython
 Requires-Dist: pyfiglet
+Requires-Dist: nuitka
+Requires-Dist: pytest
 
 # NoStrike Firewall Configuration Tool
 
