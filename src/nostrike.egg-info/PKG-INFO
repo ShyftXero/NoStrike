@@ -1,14 +1,15 @@
 Metadata-Version: 2.1
 Name: nostrike
 Version: 0.1.0
-Summary: Add your description here
+Summary: NoStrike is a firewall config tool to prevent unwanted access to specific hosts (hosts you can NOt STRIKE)
+Requires-Python: >=3.11
 Description-Content-Type: text/markdown
 Requires-Dist: typer
 Requires-Dist: mpire
 Requires-Dist: dnspython
 Requires-Dist: pyfiglet
-Requires-Dist: nuitka
 Requires-Dist: pytest
+Requires-Dist: nuitka
 
 # NoStrike Firewall Configuration Tool
 

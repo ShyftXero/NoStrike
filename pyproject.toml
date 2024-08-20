@@ -10,10 +10,11 @@ dependencies = [
     "mpire",
     "dnspython",
     "pyfiglet",
+    "pytest",
+    "nuitka",
 ]
 
 [tool.uv]
 dev-dependencies = [
-    "pytest",
-    "nuitka",
+
 ]
