@@ -1,0 +1,14 @@
+[project]
+name = "nostrike"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+dependencies = [
+    "typer",
+    "mpire",
+    "dnspython",
+    "pyfiglet",
+]
+
+[tool.uv]
+dev-dependencies = []

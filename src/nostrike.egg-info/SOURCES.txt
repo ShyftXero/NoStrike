@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/nostrike/__init__.py
+src/nostrike.egg-info/PKG-INFO
+src/nostrike.egg-info/SOURCES.txt
+src/nostrike.egg-info/dependency_links.txt
+src/nostrike.egg-info/requires.txt
+src/nostrike.egg-info/top_level.txt

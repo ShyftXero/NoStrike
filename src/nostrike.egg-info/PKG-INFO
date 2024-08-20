@@ -1,0 +1,116 @@
+Metadata-Version: 2.1
+Name: nostrike
+Version: 0.1.0
+Summary: Add your description here
+Description-Content-Type: text/markdown
+Requires-Dist: typer
+Requires-Dist: mpire
+Requires-Dist: dnspython
+Requires-Dist: pyfiglet
+
+# NoStrike Firewall Configuration Tool
+
+NoStrike is a Python-based command-line tool for configuring iptables firewall rules to block traffic to or from specified hostnames, IP addresses, or CIDR subnets.
+
+```
+ _   _       _____ _        _ _        
+| \ | |     /  ___| |      (_) |       
+|  \| | ___ \ `--.| |_ _ __ _| | _____ 
+| . ` |/ _ \ `--. \ __| '__| | |/ / _ \
+| |\  | (_) /\__/ / |_| |  | |   <  __/
+\_| \_/\___/\____/ \__|_|  |_|_|\_\___|
+```
+
+## Features
+
+- Block traffic based on hostnames, IP addresses, or CIDR subnets
+- Resolve hostnames to IP addresses for comprehensive blocking
+- Save and restore firewall configurations
+- Reset firewall rules
+- Non-persistent configuration (rules do not survive system reboots)
+
+## Requirements
+
+- Python 3.6+
+- `typer` library
+- `sudo` privileges for iptables operations
+
+## Installation
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/nostrike.git
+   cd nostrike
+   ```
+
+2. Install the required dependencies:
+   ```
+   pip install typer
+   ```
+
+3. Make the script executable:
+   ```
+   chmod +x nostrike.py
+   ```
+
+## Usage
+
+### Setup Firewall
+
+Configure the firewall based on the contents of a specified file:
+
+```
+./nostrike.py setup [--file-path FILE_PATH]
+```
+
+If no file path is specified, it defaults to `~/nostrike.txt`.
+
+### Reset Firewall
+
+Remove all configured firewall rules:
+
+```
+./nostrike.py reset
+```
+
+### Save Firewall Configuration
+
+Save the current firewall configuration to a file:
+
+```
+./nostrike.py save [--file-path FILE_PATH]
+```
+
+If no file path is specified, it defaults to `~/firewall_backup.json`.
+
+### Restore Firewall Configuration
+
+Restore a previously saved firewall configuration:
+
+```
+./nostrike.py restore [--file-path FILE_PATH]
+```
+
+If no file path is specified, it defaults to `~/firewall_backup.json`.
+
+## File Format
+
+The `nostrike.txt` file should contain one target per line. Targets can be:
+
+- IP addresses (e.g., `192.168.1.1`)
+- CIDR subnets (e.g., `192.168.1.0/24`)
+- Hostnames or domain names (e.g., `example.com`)
+
+## Notes
+
+- This tool requires sudo privileges to modify iptables rules.
+- Firewall rules configured with this tool do not persist between system reboots.
+- Always use caution when modifying firewall rules to avoid locking yourself out of the system.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
